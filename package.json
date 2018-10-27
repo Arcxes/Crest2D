@@ -1,0 +1,37 @@
+{
+  "name": "crest2d",
+  "version": "1.0.0",
+  "description": "An HTML5 Game Engine designed for high performance 2D Cross Platform games",
+  "main": "build/crest2d.js",
+  "scripts": {
+    "build": "rollup -c && uglifyjs build/crest2d.js -cm --preamble > build/crest2d.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arcxes/Crest2D.git"
+  },
+  "keywords": [
+    "html5",
+    "game",
+    "crest2d",
+    "2d",
+    "canvas",
+    "mobile",
+    "webaudio"
+  ],
+  "author": "Arcxes Games",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arcxes/Crest2D/issues"
+  },
+  "homepage": "https://github.com/Arcxes/Crest2D#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "uglify-js": "^3.4.9"
+  }
+}
