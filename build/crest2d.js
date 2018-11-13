@@ -764,7 +764,7 @@
               this.tiles.push(tileCanvas);
 
               if (this.totalTiles == self.tiles.length - 1) {
-                this.preDrawMap();
+                this.predraw();
               }
             }
           }

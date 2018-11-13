@@ -1,6 +1,6 @@
 {
   "name": "crest2d",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An HTML5 Game Engine designed for high performance 2D Cross Platform games",
   "main": "build/crest2d.js",
   "scripts": {
