@@ -23,3 +23,9 @@ export {Circle} from "./physics/Circle";
 export {Viewport} from "./graphics/camera/Viewport";
 export {Camera} from "./graphics/camera/Camera"; //NEEDS WORK TO HAVE DISPLAY HANDLE VIEWPORT RESIZING AUTOMATICALLY
 export {Loader} from "./loader/Loader";
+
+//Networking Components
+export {Client} from "./network/Client";
+export {StringParser} from "./network/parsers/StringParser";
+export {JSONParser} from "./network/parsers/JSONParser";
+export {BinaryParser} from "./network/parsers/BinaryParser";

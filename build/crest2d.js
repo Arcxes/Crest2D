@@ -1033,6 +1033,178 @@
       return Loader;
     }();
 
+    function _defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    function _createClass(Constructor, protoProps, staticProps) {
+      if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) _defineProperties(Constructor, staticProps);
+      return Constructor;
+    }
+
+    //Client.js
+    //Author - Arcxes
+
+    /*
+        Client is designed to connect to a server, and send and receive packets
+    */
+    //Client Class
+    var Client =
+    /*#__PURE__*/
+    function () {
+      function Client(parser) {
+        this.socket = null;
+        this.parser = parser;
+      }
+
+      var _proto = Client.prototype;
+
+      _proto.connect = function connect(url) {
+        this.socket = new WebSocket(url);
+        this.parser.register(this.socket);
+      };
+
+      _proto.send = function send(json) {
+        this.socket.send(this.parser.encode(json));
+      };
+
+      _proto.parse = function parse(data) {
+        return this.parser.decode(data);
+      };
+
+      _createClass(Client, [{
+        key: "onopen",
+        set: function set(callback) {
+          this.socket.onopen = callback;
+        }
+      }, {
+        key: "onmessage",
+        set: function set(callback) {
+          this.socket.onmessage = callback;
+        }
+      }, {
+        key: "onerror",
+        set: function set(callback) {
+          this.socket.onerror = callback;
+        }
+      }, {
+        key: "onclose",
+        set: function set(callback) {
+          this.socket.onclose = callback;
+        }
+      }]);
+
+      return Client;
+    }();
+
+    //StringParser.js
+    //Author - Arcxes
+
+    /*
+        StringParser is designed to be the default parser for the websocket client, it handles normal string data
+    */
+    //StringParser Class
+    var StringParser =
+    /*#__PURE__*/
+    function () {
+      function StringParser() {}
+
+      var _proto = StringParser.prototype;
+
+      _proto.register = function register(socket) {
+        console.log("WebSocket: " + socket + " has been registered with StringParser");
+      };
+
+      _proto.encode = function encode(data) {
+        return data;
+      };
+
+      _proto.decode = function decode(data) {
+        return data;
+      };
+
+      return StringParser;
+    }();
+
+    //JSONParser.js
+    //Author - Arcxes
+
+    /*
+        JSONParser is designed to convert json data to a string, ready to be sent over the network
+    */
+    //JSONParser Class
+    var JSONParser =
+    /*#__PURE__*/
+    function () {
+      function JSONParser() {}
+
+      var _proto = JSONParser.prototype;
+
+      _proto.register = function register(socket) {
+        console.log("WebSocket: " + socket + " has been registered with JSONParser");
+      };
+
+      _proto.encode = function encode(data) {
+        return JSON.stringify(json);
+      };
+
+      _proto.decode = function decode(data) {
+        return JSON.parse(data);
+      };
+
+      return JSONParser;
+    }();
+
+    //BinaryParser.js
+    //Author - Arcxes
+
+    /*
+        BinaryParser is designed to convert json data to binary data and binary data to json data
+    */
+    //BinaryParser Class
+    var BinaryParser =
+    /*#__PURE__*/
+    function () {
+      function BinaryParser() {
+        this.byteMultiplier = 2;
+      }
+
+      var _proto = BinaryParser.prototype;
+
+      _proto.register = function register(socket) {
+        socket.binaryType = "arraybuffer";
+        console.log("WebSocket: " + socket + " has been registered with BinaryParser");
+      };
+
+      _proto.encode = function encode(data) {
+        var string = JSON.stringify(data);
+        var buffer = new ArrayBuffer(string.length * this.byteMultiplier);
+        var bufferView = new Uint16Array(buffer);
+        var length = string.length;
+
+        for (var i = 0; i < length; i++) {
+          bufferView[i] = string.charCodeAt(i);
+        }
+
+        return buffer;
+      };
+
+      _proto.decode = function decode(data) {
+        var string = String.fromCharCode.apply(null, new Uint16Array(data));
+        var json = JSON.parse(string);
+        return json;
+      };
+
+      return BinaryParser;
+    }();
+
     //Copyright 2018 Arcxes Games. Crest2D
 
     exports.Display = Display;
@@ -1049,6 +1221,10 @@
     exports.Viewport = Viewport;
     exports.Camera = Camera;
     exports.Loader = Loader;
+    exports.Client = Client;
+    exports.StringParser = StringParser;
+    exports.JSONParser = JSONParser;
+    exports.BinaryParser = BinaryParser;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
