@@ -13,10 +13,12 @@ export class JSONParser{
     }
 
     encode(data){
-        return JSON.stringify(json);
+        let string = JSON.stringify(data);
+        return string;
     }
 
     decode(data){
-        return JSON.parse(data);
+        let json = JSON.parse(data);
+        return json;
     }
 }

@@ -18,8 +18,8 @@ export class Client{
         this.parser.register(this.socket);
     }
 
-    send(json){
-        this.socket.send(this.parser.encode(json));
+    send(data){
+        this.socket.send(this.parser.encode(data));
     }
 
     parse(data){
