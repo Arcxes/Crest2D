@@ -12,6 +12,7 @@ export class Rectangle{
         this.x = x;
         this.y = y;
         this.width = width;
+	this.height = height;
         this.right = this.x + this.width;
         this.bottom = this.y + this.height;
     }
