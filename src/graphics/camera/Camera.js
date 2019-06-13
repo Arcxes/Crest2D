@@ -12,39 +12,85 @@ import {Viewport} from "./Viewport";
 //Camera Class
 export class Camera{
 
+    /**
+     * 
+     * @param {number} [x=0]
+     * @param {number} [y=0]
+     */
     constructor(x=0,y=0){
+        /**
+         * @ignore
+         * @type {{x: number, y: number}}
+         */
         this.position = {x: x, y: y};
+        /**
+         * @ignore
+         * @type {number}
+         */
         this.distance = 1000;
+        /**
+         * @ignore
+         * @type {number}
+         */
         this.fov = Math.PI / 4;
+        /**
+         * @ignore
+         * @type {Viewport}
+         */
         this.viewport = new Viewport();
+        /**
+         * @ignore
+         * @type {HTMLCanvasElement}
+         */
         this.canvas = window.canvas;
+        /**
+         * @ignore
+         * @type {CanvasRenderingContext2D}
+         */
         this.ctx = window.ctx;
+        /**
+         * @ignore
+         * @type {number}
+         */
+        this.aspectRatio = this.canvas.width / this.canvas.height;
         this.update();
     }
 
-    //start camera calculations
+    /**
+     * start camera calculations
+     */
     begin(){
         this.ctx.save();
         this.applyScale();
         this.applyTranslation();
     }
 
-    //stop the camera calculations
+    /**
+     * stop the camera calculations
+     */
     end(){
         this.ctx.restore();
     }
 
-    //apply the scale to the drawing context
+    /**
+     * apply the scale to the drawing context
+     * @ignore
+     */
     applyScale(){
         this.ctx.scale(this.viewport.scale.x, this.viewport.scale.y);
     }
 
-    //apply the translation to the drawing context
+    /**
+     * apply the translation to the drawing context
+     * @ignore
+     */
     applyTranslation(){
         this.ctx.translate(-this.viewport.left,-this.viewport.top);
     }
 
-    //update the viewport
+    /**
+     * update the camera viewport
+     */
     update(){
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.viewport.width = this.distance * Math.tan(this.fov);
@@ -57,25 +103,40 @@ export class Camera{
         this.viewport.scale.y = this.canvas.height / this.viewport.height;
     }
 
-    //set the zoom distance
+    /**
+     * set the zoom distance
+     * @param {number} distance the camera's zoom distance
+     */
     setZoom(distance){
         this.distance = distance;
         this.update();
     }
 
-    //set the frustum culling buffer
+    /**
+     * set the frustum culling buffer
+     * @param {number} buffer size of the frustum
+     */
     setViewBuffer(buffer){
         this.viewport.viewBuffer = buffer;
     }
 
-    //set the camera position
+    /**
+     * set the frustum culling buffer
+     * @param {number} x the camera's x coordinate
+     * @param {number} y the camera's y coordinate
+     */
     setPosition(x,y){
         this.position.x = x;
         this.position.y = y;
         this.update();
     }
 
-    //convert screen coordinates to world coordinates
+    /**
+     * convert screen coordinates to world coordinates
+     * @param {number} x screen x coordinate
+     * @param {number} y screen y coordinate
+     * @return {{x: number, y: number}} converted coordinates
+     */
     screenToWorld(x,y){
         let coords = {};
         coords.x = (x / this.viewport.scale.x) + this.viewport.left;
@@ -83,7 +144,12 @@ export class Camera{
         return coords;
     }
 
-    //convery world coordinates to screen coordinates
+    /**
+     * convert world coordinates to screen coordinates
+     * @param {number} x world x coordinate
+     * @param {number} y world y coordinate
+     * @return {{x: number, y: number}} converted coordinates
+     */
     worldToScreen(x,y){
         let coords = {};
         coords.x  = (x - this.viewport.left) * (this.viewport.scale.x);
@@ -91,7 +157,12 @@ export class Camera{
         return coords;
     }
 
-    //check if a position is in the camera viewport
+    /**
+     * check if a position is in the camera viewport
+     * @param {number} x x coordinate
+     * @param {number} y y coordinate
+     * @return {boolean} are the coords in view
+     */
     inView(x,y){
         return (x >= this.position.x - this.viewport.viewBuffer &&
             x <= (this.position.x + this.viewport.width + this.viewport.viewBuffer) &&

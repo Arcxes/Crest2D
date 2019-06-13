@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href>
+  <title data-ice="title">Source | crest2d</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="An HTML5 Game Engine designed for high performance 2D Cross Platform games"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="crest2d"><meta property="twitter:description" content="An HTML5 Game Engine designed for high performance 2D Cross Platform games"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Arcxes/Crest2D"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#application">application</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/application/Application.js~Application.html">Application</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics">graphics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/Display.js~Display.html">Display</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-animation">graphics/animation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/animation/Animation.js~Animation.html">Animation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/animation/SpriteSheet.js~SpriteSheet.html">SpriteSheet</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-camera">graphics/camera</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/camera/Camera.js~Camera.html">Camera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/camera/Viewport.js~Viewport.html">Viewport</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-renderers">graphics/renderers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/renderers/SpriteBatch.js~SpriteBatch.html">SpriteBatch</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#input">input</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/InputManager.js~InputManager.html">InputManager</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loader">loader</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/JSONLoader.js~JSONLoader.html">JSONLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#network">network</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/Client.js~Client.html">Client</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#network-parsers">network/parsers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/BinaryParser.js~BinaryParser.html">BinaryParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/JSONParser.js~JSONParser.html">JSONParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/StringParser.js~StringParser.html">StringParser</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#physics">physics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/physics/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/physics/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#tiledmap">tiledmap</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tiledmap/TiledMap.js~TiledMap.html">TiledMap</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#time">time</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/time/Time.js~DeltaTime.html">DeltaTime</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">151/176</span></h1>
+
+<table class="files-summary" data-ice="files" data-use-coverage="true">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Identifier</td>
+      <td class="coverage">Document</td>
+      <td style="display: none;">Size</td>
+      <td style="display: none;">Lines</td>
+      <td style="display: none;">Updated</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/Crest2D.js.html">src/Crest2D.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">1067 byte</td>
+      <td style="display: none;" data-ice="lines">29</td>
+      <td style="display: none;" data-ice="updated">2019-06-04 05:22:52 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/application/Application.js.html#errorLines=11,9">src/application/Application.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/application/Application.js~Application.html">Application</a></span></td>
+      <td class="coverage"><span data-ice="coverage">81 %</span><span data-ice="coverageCount" class="coverage-count">9/11</span></td>
+      <td style="display: none;" data-ice="size">1650 byte</td>
+      <td style="display: none;" data-ice="lines">78</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 02:17:46 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/Display.js.html#errorLines=9">src/graphics/Display.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/Display.js~Display.html">Display</a></span></td>
+      <td class="coverage"><span data-ice="coverage">85 %</span><span data-ice="coverageCount" class="coverage-count">6/7</span></td>
+      <td style="display: none;" data-ice="size">1182 byte</td>
+      <td style="display: none;" data-ice="lines">55</td>
+      <td style="display: none;" data-ice="updated">2019-06-04 05:25:51 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/animation/Animation.js.html#errorLines=9">src/graphics/animation/Animation.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/animation/Animation.js~Animation.html">Animation</a></span></td>
+      <td class="coverage"><span data-ice="coverage">93 %</span><span data-ice="coverageCount" class="coverage-count">14/15</span></td>
+      <td style="display: none;" data-ice="size">2719 byte</td>
+      <td style="display: none;" data-ice="lines">112</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 05:33:13 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/animation/SpriteSheet.js.html#errorLines=9">src/graphics/animation/SpriteSheet.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/animation/SpriteSheet.js~SpriteSheet.html">SpriteSheet</a></span></td>
+      <td class="coverage"><span data-ice="coverage">80 %</span><span data-ice="coverageCount" class="coverage-count">4/5</span></td>
+      <td style="display: none;" data-ice="size">651 byte</td>
+      <td style="display: none;" data-ice="lines">29</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 05:32:10 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/camera/Camera.js.html#errorLines=13">src/graphics/camera/Camera.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/camera/Camera.js~Camera.html">Camera</a></span></td>
+      <td class="coverage"><span data-ice="coverage">95 %</span><span data-ice="coverageCount" class="coverage-count">19/20</span></td>
+      <td style="display: none;" data-ice="size">4541 byte</td>
+      <td style="display: none;" data-ice="lines">171</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:07:10 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/camera/Viewport.js.html#errorLines=11,9">src/graphics/camera/Viewport.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/camera/Viewport.js~Viewport.html">Viewport</a></span></td>
+      <td class="coverage"><span data-ice="coverage">80 %</span><span data-ice="coverageCount" class="coverage-count">8/10</span></td>
+      <td style="display: none;" data-ice="size">817 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 05:36:13 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/graphics/renderers/SpriteBatch.js.html#errorLines=11,9">src/graphics/renderers/SpriteBatch.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/graphics/renderers/SpriteBatch.js~SpriteBatch.html">SpriteBatch</a></span></td>
+      <td class="coverage"><span data-ice="coverage">84 %</span><span data-ice="coverageCount" class="coverage-count">11/13</span></td>
+      <td style="display: none;" data-ice="size">2957 byte</td>
+      <td style="display: none;" data-ice="lines">114</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:07:13 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/input/InputManager.js.html#errorLines=9">src/input/InputManager.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/input/InputManager.js~InputManager.html">InputManager</a></span></td>
+      <td class="coverage"><span data-ice="coverage">66 %</span><span data-ice="coverageCount" class="coverage-count">2/3</span></td>
+      <td style="display: none;" data-ice="size">1082 byte</td>
+      <td style="display: none;" data-ice="lines">31</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 18:54:17 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/loader/ImageLoader.js.html#errorLines=9">src/loader/ImageLoader.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/loader/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
+      <td style="display: none;" data-ice="size">813 byte</td>
+      <td style="display: none;" data-ice="lines">33</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:00:17 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/loader/JSONLoader.js.html#errorLines=11">src/loader/JSONLoader.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/loader/JSONLoader.js~JSONLoader.html">JSONLoader</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
+      <td style="display: none;" data-ice="size">1843 byte</td>
+      <td style="display: none;" data-ice="lines">59</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:00:02 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/loader/Loader.js.html#errorLines=13,15">src/loader/Loader.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/loader/Loader.js~Loader.html">Loader</a></span></td>
+      <td class="coverage"><span data-ice="coverage">88 %</span><span data-ice="coverageCount" class="coverage-count">15/17</span></td>
+      <td style="display: none;" data-ice="size">3349 byte</td>
+      <td style="display: none;" data-ice="lines">142</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:04:47 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/network/Client.js.html#errorLines=9">src/network/Client.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/network/Client.js~Client.html">Client</a></span></td>
+      <td class="coverage"><span data-ice="coverage">90 %</span><span data-ice="coverageCount" class="coverage-count">10/11</span></td>
+      <td style="display: none;" data-ice="size">1859 byte</td>
+      <td style="display: none;" data-ice="lines">84</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:13:33 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/network/parsers/BinaryParser.js.html#errorLines=11,9">src/network/parsers/BinaryParser.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/network/parsers/BinaryParser.js~BinaryParser.html">BinaryParser</a></span></td>
+      <td class="coverage"><span data-ice="coverage">66 %</span><span data-ice="coverageCount" class="coverage-count">4/6</span></td>
+      <td style="display: none;" data-ice="size">1380 byte</td>
+      <td style="display: none;" data-ice="lines">53</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:20:07 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/network/parsers/JSONParser.js.html#errorLines=9">src/network/parsers/JSONParser.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/network/parsers/JSONParser.js~JSONParser.html">JSONParser</a></span></td>
+      <td class="coverage"><span data-ice="coverage">75 %</span><span data-ice="coverageCount" class="coverage-count">3/4</span></td>
+      <td style="display: none;" data-ice="size">836 byte</td>
+      <td style="display: none;" data-ice="lines">37</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:21:16 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/network/parsers/StringParser.js.html#errorLines=9">src/network/parsers/StringParser.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/network/parsers/StringParser.js~StringParser.html">StringParser</a></span></td>
+      <td class="coverage"><span data-ice="coverage">75 %</span><span data-ice="coverageCount" class="coverage-count">3/4</span></td>
+      <td style="display: none;" data-ice="size">767 byte</td>
+      <td style="display: none;" data-ice="lines">35</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:23:07 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/physics/Circle.js.html#errorLines=9">src/physics/Circle.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/physics/Circle.js~Circle.html">Circle</a></span></td>
+      <td class="coverage"><span data-ice="coverage">83 %</span><span data-ice="coverageCount" class="coverage-count">5/6</span></td>
+      <td style="display: none;" data-ice="size">871 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:29:15 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/physics/Rectangle.js.html#errorLines=9">src/physics/Rectangle.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/physics/Rectangle.js~Rectangle.html">Rectangle</a></span></td>
+      <td class="coverage"><span data-ice="coverage">92 %</span><span data-ice="coverageCount" class="coverage-count">12/13</span></td>
+      <td style="display: none;" data-ice="size">2450 byte</td>
+      <td style="display: none;" data-ice="lines">99</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:31:50 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/tiledmap/TiledMap.js.html#errorLines=9">src/tiledmap/TiledMap.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/tiledmap/TiledMap.js~TiledMap.html">TiledMap</a></span></td>
+      <td class="coverage"><span data-ice="coverage">95 %</span><span data-ice="coverageCount" class="coverage-count">19/20</span></td>
+      <td style="display: none;" data-ice="size">5571 byte</td>
+      <td style="display: none;" data-ice="lines">207</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:38:28 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/time/Time.js.html#errorLines=11,9">src/time/Time.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/time/Time.js~DeltaTime.html">DeltaTime</a></span></td>
+      <td class="coverage"><span data-ice="coverage">71 %</span><span data-ice="coverageCount" class="coverage-count">5/7</span></td>
+      <td style="display: none;" data-ice="size">708 byte</td>
+      <td style="display: none;" data-ice="lines">41</td>
+      <td style="display: none;" data-ice="updated">2019-06-05 19:39:25 (UTC)</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

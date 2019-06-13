@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/tiledmap/TiledMap.js | crest2d</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="An HTML5 Game Engine designed for high performance 2D Cross Platform games"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="crest2d"><meta property="twitter:description" content="An HTML5 Game Engine designed for high performance 2D Cross Platform games"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Arcxes/Crest2D"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#application">application</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/application/Application.js~Application.html">Application</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics">graphics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/Display.js~Display.html">Display</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-animation">graphics/animation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/animation/Animation.js~Animation.html">Animation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/animation/SpriteSheet.js~SpriteSheet.html">SpriteSheet</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-camera">graphics/camera</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/camera/Camera.js~Camera.html">Camera</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/camera/Viewport.js~Viewport.html">Viewport</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#graphics-renderers">graphics/renderers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/graphics/renderers/SpriteBatch.js~SpriteBatch.html">SpriteBatch</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#input">input</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/InputManager.js~InputManager.html">InputManager</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loader">loader</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/JSONLoader.js~JSONLoader.html">JSONLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#network">network</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/Client.js~Client.html">Client</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#network-parsers">network/parsers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/BinaryParser.js~BinaryParser.html">BinaryParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/JSONParser.js~JSONParser.html">JSONParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/network/parsers/StringParser.js~StringParser.html">StringParser</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#physics">physics</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/physics/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/physics/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#tiledmap">tiledmap</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tiledmap/TiledMap.js~TiledMap.html">TiledMap</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#time">time</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/time/Time.js~DeltaTime.html">DeltaTime</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/tiledmap/TiledMap.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">//TiledMap.js
+//Author - Arcxes
+
+/*
+    TiledMap is designed to load and render maps from the Tiled Map Editor
+*/
+
+//TiledMap class
+export class TiledMap{
+
+    /**
+     * 
+     * @param {string} url 
+     * @param {Object} data 
+     */
+    constructor(url,data){
+        /**
+         * @ignore
+         * @type {string}
+         */
+        this.url = url;
+        /**
+         * @type {Object}
+         */
+        this.data = data;
+        /**
+         * @ignore
+         * @type {HTMLImageElement[]}
+         */
+        this.tilesets = [];
+        /**
+         * @ignore
+         * @type {HTMLImageElement[]}
+         */
+        this.tiles = [];
+        this.tiles.push(null);
+        /**
+         * @type {HTMLImageElement}
+         */
+        this.image = null;
+        /**
+         * @type {number}
+         */
+        this.x = 0;
+        /**
+         * @type {number}
+         */
+        this.y = 0;
+        /**
+         * @ignore
+         * @type {number}
+         */
+        this.totalTiles = 0;
+        /**
+         * @ignore
+         * @type {string}
+         */
+        this.folder = this.url.substring(0,this.url.lastIndexOf(&quot;/&quot;));
+        /**
+         * @ignore
+         * @type {Function}
+         */
+        this.success = null;
+        /**
+         * @ignore
+         * @type {Function}
+         */
+        this.error = null;
+        /**
+         * @ignore
+         * @type {CanvasRenderingContext2D}
+         */
+        this.ctx = window.ctx;
+    }
+
+    /**
+     * set the success and error callbacks of the tiled map
+     * @param {Function} success callback if loading succeeds
+     * @param {Function} error callback if loading fails
+     */
+    setCallbacks(success,error){
+        this.success = success;
+        this.error = error;
+        this.loadTilesets();
+    }
+
+    /**
+     * @ignore
+     * load the tilesets
+     */
+    loadTilesets(){
+        let self = this;
+        let successCount = 0;
+        let errorCount = 0;
+        for(let ts=0; ts&lt;this.data.tilesets.length; ts++){
+            let image = new Image();
+            image.addEventListener(&quot;load&quot;,function(){
+                successCount++;
+                self.tilesets.push(image);
+                if(successCount + errorCount == self.data.tilesets.length){
+                    self.seperateTiles();
+                }
+            });
+            image.addEventListener(&quot;error&quot;,function(){
+                errorCount++;
+                console.error(&quot;Failed to load: &quot; + self.data.tilesets[ts].image);
+                self.error();
+            });
+            if(this.folder.length &gt;= 1){
+                this.folder += &quot;/&quot;;
+            }
+            image.src = this.folder + this.data.tilesets[ts].image;
+        }
+    }
+
+    /**
+     * @ignore
+     * split the tilesets into seperate tiles
+     */
+    seperateTiles(){
+        let self = this;
+        for(let ts=0; ts&lt;this.tilesets.length; ts++){
+            let nTilesX = this.tilesets[ts].width / this.data.tilewidth;
+            let nTilesY = this.tilesets[ts].height / this.data.tileheight;
+            this.totalTiles = nTilesX * nTilesY;
+
+            for(let ty=0; ty&lt;nTilesY; ty++){
+                for(let tx=0; tx&lt;nTilesX; tx++){
+                    let tileCanvas = document.createElement(&quot;canvas&quot;);
+                    let tileContext = tileCanvas.getContext(&quot;2d&quot;);
+
+                    tileCanvas.width = this.data.tilewidth;
+                    tileCanvas.height = this.data.tileheight;
+
+                    let x = tx * this.data.tilewidth;
+                    let y = ty * this.data.tileheight;
+                    tileContext.drawImage(this.tilesets[ts],-x,-y);
+
+                    this.tiles.push(tileCanvas);
+
+                    if(this.totalTiles == (self.tiles.length-1)){
+                        this.predraw();
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * @ignore
+     * predraw the map and save it as an image
+     */
+    predraw(){
+        let mapCanvas = document.createElement(&quot;canvas&quot;);
+        mapCanvas.width = this.data.width * this.data.tilewidth;
+        mapCanvas.height = this.data.height * this.data.tileheight;
+
+        let mapContext = mapCanvas.getContext(&quot;2d&quot;);
+        for(let l=0; l&lt;this.data.layers.length; l++){
+            let x=0;
+            let y=0;
+            if(this.data.layers[l].type == &quot;tilelayer&quot;){
+                for(let d=0; d&lt;this.data.layers[l].data.length; d++){
+                    if(d % this.data.width == 0 &amp;&amp; d != 0){
+                        y += this.data.tileheight;
+                        x = 0;
+                    }
+
+                    if(this.data.layers[l].data[d] != 0){
+                        let tile = this.tiles[this.data.layers[l].data[d]];
+                        mapContext.drawImage(tile,x,y);
+                    }
+                    x += this.data.tilewidth;
+                }
+            }
+        }
+        let self = this;
+        this.image = new Image();
+        this.image.addEventListener(&quot;load&quot;,function(){
+            self.success();
+        });
+        this.image.addEventListener(&quot;error&quot;,function(){
+            console.error(&quot;Failed to convert map canvas to image&quot;);
+            self.error();
+        });
+        this.image.src = mapCanvas.toDataURL(&quot;image/png&quot;);
+    }
+
+    /**
+     * render the tiled map
+     */
+    render(){
+        this.ctx.drawImage(this.image,this.x,this.y);
+    }
+
+    /**
+     * set the map position
+     * @param {number} x x coordinate
+     * @param {number} y y coordinate
+     */
+    setPosition(x,y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

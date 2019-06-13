@@ -8,7 +8,11 @@
 //ImageLoader Class
 export class ImageLoader{
 
-    //load an image
+    /**
+     * load an image
+     * @param {string} url the url to an image
+     * @param {Loader} loader the main loader
+     */
     load(url,loader){
         let image = new Image();
         image.addEventListener("load",function(){

@@ -8,13 +8,31 @@
 //Circle Class
 export class Circle{
 
+    /**
+     * @param {number} x
+     * @param {number} y
+     * @param {number} radius
+     */
     constructor(x,y,radius){
+        /**
+         * @type {number}
+         */
         this.x = x;
+        /**
+         * @type {number}
+         */
         this.y = y;
+        /**
+         * @type {number}
+         */
         this.radius = radius;
     }
 
-    //check if the circle overlaps another circle
+    /**
+     * check if the circle overlaps another circle
+     * @param {Circle} circle circle to compare with
+     * @return {boolean} are the circles overlapping
+     */
     overlaps(circle){
         var distance = Math.sqrt((this.x-circle.x) * ((this.x-circle.x) +
          (this.y-circle.y)) * (this.y-circle.y));

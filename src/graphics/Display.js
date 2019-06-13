@@ -6,32 +6,49 @@
 */
 
 //Display Class
-export class Display{
+export class Display {
 
+    /**
+     *
+     * @param {number} width 
+     * @param {number} height 
+     */
     constructor(width,height){
+        /**
+         * @type {HTMLCanvasElement}
+         */
         this.canvas = document.createElement("canvas");
         this.canvas.id = "C2DC"
         this.canvas.width = width;
         this.canvas.height = height;
+        /**
+         * @type {CanvasRenderingContext2D}
+         */
         this.ctx = this.canvas.getContext("2d");
-        // this.audioContext = new window.AudioContext() || new window.webkitAudioContext();
-        // window.audioContext = this.audioContext;
-        // window.activeSounds = {};
     }
 
-    //add the canvas to the DOM and create the graphics context
+   
+    /**
+     * add the canvas to the DOM and create the graphics context
+     */
     create(){
         document.body.appendChild(this.canvas);
         window.canvas = this.canvas;
         window.ctx = this.ctx
     }
 
-    //clear the canvas
+    /**
+     * clear the canvas
+     */
     clear(){
         this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
     }
 
-    //resize the canvas
+    /**
+     * resize the display
+     * @param {number} width 
+     * @param {number} height 
+     */
     resize(width,height){
         this.canvas.width = width;
         this.canvas.height = height;

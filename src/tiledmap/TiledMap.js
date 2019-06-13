@@ -8,30 +8,86 @@
 //TiledMap class
 export class TiledMap{
 
+    /**
+     * 
+     * @param {string} url 
+     * @param {Object} data 
+     */
     constructor(url,data){
+        /**
+         * @ignore
+         * @type {string}
+         */
         this.url = url;
+        /**
+         * @type {Object}
+         */
         this.data = data;
+        /**
+         * @ignore
+         * @type {HTMLImageElement[]}
+         */
         this.tilesets = [];
+        /**
+         * @ignore
+         * @type {HTMLImageElement[]}
+         */
         this.tiles = [];
         this.tiles.push(null);
+        /**
+         * @type {HTMLImageElement}
+         */
         this.image = null;
+        /**
+         * @type {number}
+         */
         this.x = 0;
+        /**
+         * @type {number}
+         */
         this.y = 0;
+        /**
+         * @ignore
+         * @type {number}
+         */
         this.totalTiles = 0;
+        /**
+         * @ignore
+         * @type {string}
+         */
         this.folder = this.url.substring(0,this.url.lastIndexOf("/"));
+        /**
+         * @ignore
+         * @type {Function}
+         */
         this.success = null;
+        /**
+         * @ignore
+         * @type {Function}
+         */
         this.error = null;
+        /**
+         * @ignore
+         * @type {CanvasRenderingContext2D}
+         */
         this.ctx = window.ctx;
     }
 
-    //set the success and error callbacks of the tiled map
+    /**
+     * set the success and error callbacks of the tiled map
+     * @param {Function} success callback if loading succeeds
+     * @param {Function} error callback if loading fails
+     */
     setCallbacks(success,error){
         this.success = success;
         this.error = error;
         this.loadTilesets();
     }
 
-    //load the tilesets
+    /**
+     * @ignore
+     * load the tilesets
+     */
     loadTilesets(){
         let self = this;
         let successCount = 0;
@@ -57,7 +113,10 @@ export class TiledMap{
         }
     }
 
-    //split the tilesets into seperate tiles
+    /**
+     * @ignore
+     * split the tilesets into seperate tiles
+     */
     seperateTiles(){
         let self = this;
         for(let ts=0; ts<this.tilesets.length; ts++){
@@ -87,7 +146,10 @@ export class TiledMap{
         }
     }
 
-    //predraw the map and save it as an image
+    /**
+     * @ignore
+     * predraw the map and save it as an image
+     */
     predraw(){
         let mapCanvas = document.createElement("canvas");
         mapCanvas.width = this.data.width * this.data.tilewidth;
@@ -124,12 +186,18 @@ export class TiledMap{
         this.image.src = mapCanvas.toDataURL("image/png");
     }
 
-    //render the tiled map
+    /**
+     * render the tiled map
+     */
     render(){
         this.ctx.drawImage(this.image,this.x,this.y);
     }
 
-    //set the map position
+    /**
+     * set the map position
+     * @param {number} x x coordinate
+     * @param {number} y y coordinate
+     */
     setPosition(x,y){
         this.x = x;
         this.y = y;

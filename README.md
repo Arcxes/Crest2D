@@ -9,7 +9,7 @@ to build from the source code clone the repsoitory and open the folder in a term
 
 then run
 
-`npm install` and `jsc src/Crest2D.js`
+`npm install` and `npm run build`
   
 this will generate a folder called `build` which will contain `crest2d.js`
 

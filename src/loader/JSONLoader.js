@@ -10,7 +10,11 @@ import { TiledMap } from "../tiledmap/TiledMap";
 //JSONLoader Class
 export class JSONLoader{
 
-    //load JSON data and (OPTIONAL)load it into whatever format specified in the data
+    /**
+     * load JSON data and load it into whatever format specified in the data
+     * @param {string} url the url to a json file
+     * @param {Loader} loader the main loader
+     */
     load(url,loader){
         let request = new XMLHttpRequest();
         request.overrideMimeType("application/json");
