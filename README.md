@@ -15,4 +15,4 @@ this will generate a folder called `build` which will contain `crest2d.js`
 
 
 # Having Trouble With Our Engine?
-Contact us on our [discord](https://discord.gg/pR5tx2T) server or create a new [issue](https://github.com/Arcxes/Crest2D/issues)
+Contact us on our [discord](https://discord.gg/w9TT8qN) server or create a new [issue](https://github.com/Arcxes/Crest2D/issues)
