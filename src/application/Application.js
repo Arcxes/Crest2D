@@ -10,18 +10,18 @@ export class Application{
 
     constructor(){
         /**
-         * @ignore
-         * @type {Function}
+         * @private
          */
         this.preload = null;
+        
+        
         /**
-         * @ignore
-         * @type {Function}
+         * @private
          */
         this.create = null;
+        
         /**
-         * @ignore
-         * @type {Function}
+         * @private
          */
         this.render = null;
     }
@@ -30,6 +30,7 @@ export class Application{
      * start the application
      * @param {Loader} loader asset loader to use in application
      */
+    
     start(loader){
         loader.setCallback(this.internalCreate());
         this.preload();
@@ -61,7 +62,7 @@ export class Application{
 
     /**
      * application's internal create function
-     * @ignore
+     * @orivate
      */
     internalCreate(){
         this.create();
@@ -70,7 +71,7 @@ export class Application{
 
     /**
      * application's internal render function
-     * @ignore
+     * @private
      */
     internalRender(){
         this.render();
