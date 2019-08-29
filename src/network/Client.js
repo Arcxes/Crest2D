@@ -14,12 +14,12 @@ export class Client{
      */
     constructor(parser){
         /**
-         * @ignore
+         * @private
          * @type {WebSocket}
          */
         this.socket = null;
         /**
-         * @ignore
+         * @private
          * @type {StringParser|JSONParser|BinaryParser}
          */
         this.parser = parser;

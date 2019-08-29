@@ -14,42 +14,42 @@ export class Loader{
 
     constructor(){
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.successCount = 0;
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.errorCount = 0;
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.totalAssets = 0;
         /**
-         * @ignore
+         * @private
          * @type {Object}
          */
         this.cache = {};
         /**
-         * @ignore
+         * @private
          * @type {string[]}
          */
         this.queue = [];
         /**
-         * @ignore
+         * @private
          * @type {Function}
          */
         this.callback = null;
         /**
-         * @ignore
+         * @private
          * @type {ImageLoader}
          */
         this.imageLoader = new ImageLoader();
         /**
-         * @ignore
+         * @private
          * @type {JSONLoader}
          */
         this.jsonLoader = new JSONLoader(); 
@@ -111,7 +111,7 @@ export class Loader{
 
     /**
      * pass the url and type to a specific loader to be loaded into memory
-     * @ignore
+     * @private
      * @param {string} url url to asset to load
      * @param {string} type type of asset to load
      */
@@ -129,7 +129,7 @@ export class Loader{
 
     /**
      * check if all the assets are done loading
-     * @ignore
+     * @private
      * @return {boolean} is the assets done loading
      */
     isDone(){

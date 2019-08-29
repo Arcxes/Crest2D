@@ -19,37 +19,37 @@ export class Camera{
      */
     constructor(x=0,y=0){
         /**
-         * @ignore
+         * @private
          * @type {{x: number, y: number}}
          */
         this.position = {x: x, y: y};
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.distance = 1000;
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.fov = Math.PI / 4;
         /**
-         * @ignore
+         * @private
          * @type {Viewport}
          */
         this.viewport = new Viewport();
         /**
-         * @ignore
+         * @private
          * @type {HTMLCanvasElement}
          */
         this.canvas = window.canvas;
         /**
-         * @ignore
+         * @private
          * @type {CanvasRenderingContext2D}
          */
         this.ctx = window.ctx;
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.aspectRatio = this.canvas.width / this.canvas.height;
@@ -74,7 +74,7 @@ export class Camera{
 
     /**
      * apply the scale to the drawing context
-     * @ignore
+     * @private
      */
     applyScale(){
         this.ctx.scale(this.viewport.scale.x, this.viewport.scale.y);
@@ -82,7 +82,7 @@ export class Camera{
 
     /**
      * apply the translation to the drawing context
-     * @ignore
+     * @private
      */
     applyTranslation(){
         this.ctx.translate(-this.viewport.left,-this.viewport.top);

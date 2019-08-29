@@ -10,7 +10,7 @@ export class SpriteBatch{
 
     constructor(){
         /**
-         * @ignore
+         * @private
          * @type {CanvasRenderingContext2D}
          */
         this.ctx = window.ctx;

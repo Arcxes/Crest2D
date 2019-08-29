@@ -10,7 +10,7 @@ export class BinaryParser{
 
     constructor(){
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.byteMultiplier = 2;

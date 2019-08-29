@@ -15,7 +15,7 @@ export class TiledMap{
      */
     constructor(url,data){
         /**
-         * @ignore
+         * @private
          * @type {string}
          */
         this.url = url;
@@ -24,12 +24,12 @@ export class TiledMap{
          */
         this.data = data;
         /**
-         * @ignore
+         * @private
          * @type {HTMLImageElement[]}
          */
         this.tilesets = [];
         /**
-         * @ignore
+         * @private
          * @type {HTMLImageElement[]}
          */
         this.tiles = [];
@@ -47,27 +47,27 @@ export class TiledMap{
          */
         this.y = 0;
         /**
-         * @ignore
+         * @private
          * @type {number}
          */
         this.totalTiles = 0;
         /**
-         * @ignore
+         * @private
          * @type {string}
          */
         this.folder = this.url.substring(0,this.url.lastIndexOf("/"));
         /**
-         * @ignore
+         * @private
          * @type {Function}
          */
         this.success = null;
         /**
-         * @ignore
+         * @private
          * @type {Function}
          */
         this.error = null;
         /**
-         * @ignore
+         * @private
          * @type {CanvasRenderingContext2D}
          */
         this.ctx = window.ctx;
@@ -85,7 +85,7 @@ export class TiledMap{
     }
 
     /**
-     * @ignore
+     * @private
      * load the tilesets
      */
     loadTilesets(){
@@ -114,7 +114,7 @@ export class TiledMap{
     }
 
     /**
-     * @ignore
+     * @private
      * split the tilesets into seperate tiles
      */
     seperateTiles(){
@@ -147,7 +147,7 @@ export class TiledMap{
     }
 
     /**
-     * @ignore
+     * @private
      * predraw the map and save it as an image
      */
     predraw(){
