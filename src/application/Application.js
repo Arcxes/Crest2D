@@ -62,7 +62,7 @@ export class Application{
 
     /**
      * application's internal create function
-     * @orivate
+     * @private
      */
     internalCreate(){
         this.create();
