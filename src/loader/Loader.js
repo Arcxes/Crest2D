@@ -13,21 +13,13 @@ import {JSONLoader} from "./JSONLoader";
 export class Loader{
 
     constructor(){
-        /** @type {number} */
         this.successCount = 0;
-        /** @type {number} */
         this.errorCount = 0;
-        /** @type {number} */
         this.totalAssets = 0;
-        /** @type {Object} */
         this.cache = {};
-        /** @type {string[]} */
         this.queue = [];
-        /** @type {Function} */
         this.callback = null;
-        /** @type {ImageLoader} */
         this.imageLoader = new ImageLoader();
-        /** @type {JSONLoader} */
         this.jsonLoader = new JSONLoader(); 
     }
 
@@ -87,7 +79,6 @@ export class Loader{
 
     /**
      * pass the url and type to a specific loader to be loaded into memory
-     * @private
      * @param {string} url url to asset to load
      * @param {string} type type of asset to load
      */
@@ -105,7 +96,6 @@ export class Loader{
 
     /**
      * check if all the assets are done loading
-     * @private
      * @return {boolean} is the assets done loading
      */
     isDone(){

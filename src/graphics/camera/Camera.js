@@ -18,58 +18,39 @@ export class Camera{
      * @param {number} [y=0]
      */
     constructor(x=0,y=0){
-        /** @type {{x: number, y: number}} */
         this.position = {x: x, y: y};
-        /** @type {number} */
         this.distance = 1000;
-        /** @type {number} */
         this.fov = Math.PI / 4;
-        /** @type {Viewport} */
         this.viewport = new Viewport();
-        /** @type {HTMLCanvasElement} */
         this.canvas = window.canvas;
-        /** @type {CanvasRenderingContext2D} */
         this.ctx = window.ctx;
-        /** @type {number} */
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.update();
     }
 
-    /**
-     * start camera calculations
-     */
+    /** start camera calculations */
     begin(){
         this.ctx.save();
         this.applyScale();
         this.applyTranslation();
     }
 
-    /**
-     * stop the camera calculations
-     */
+    /** stop the camera calculations */
     end(){
         this.ctx.restore();
     }
 
-    /**
-     * apply the scale to the drawing context
-     * @private
-     */
+    /** apply the scale to the drawing context */
     applyScale(){
         this.ctx.scale(this.viewport.scale.x, this.viewport.scale.y);
     }
 
-    /**
-     * apply the translation to the drawing context
-     * @private
-     */
+    /** apply the translation to the drawing context */
     applyTranslation(){
         this.ctx.translate(-this.viewport.left,-this.viewport.top);
     }
 
-    /**
-     * update the camera viewport
-     */
+    /** update the camera viewport */
     update(){
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.viewport.width = this.distance * Math.tan(this.fov);

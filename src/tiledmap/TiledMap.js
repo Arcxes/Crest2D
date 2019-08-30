@@ -14,30 +14,18 @@ export class TiledMap{
      * @param {Object} data 
      */
     constructor(url,data){
-        /** @type {string} */
         this.url = url;
-        /** @type {Object} */
         this.data = data;
-        /** @type {HTMLImageElement[]} */
         this.tilesets = [];
-        /** @type {HTMLImageElement[]} */
         this.tiles = [];
         this.tiles.push(null);
-        /** @type {HTMLImageElement} */
         this.image = null;
-        /** @type {number} */
         this.x = 0;
-        /** @type {number} */
         this.y = 0;
-        /** @type {number} */
         this.totalTiles = 0;
-        /** @type {string} */
         this.folder = this.url.substring(0,this.url.lastIndexOf("/"));
-        /** @type {Function} */
         this.success = null;
-        /** @type {Function} */
         this.error = null;
-        /** @type {CanvasRenderingContext2D} */
         this.ctx = window.ctx;
     }
 

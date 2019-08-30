@@ -9,11 +9,8 @@
 export class DeltaTime {
 
     constructor(){
-        /** @type {number} */
         this.now = 0;
-        /** @type {number} */
         this.delta = 0;
-        /** @type {number} */
         this.then = 0;
     }
 

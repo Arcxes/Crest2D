@@ -13,9 +13,7 @@ export class Client{
      * @param {StringParser|JSONParser|BinaryParser} parser parser to use
      */
     constructor(parser){
-        /** @type {WebSocket} */
         this.socket = null;
-        /** @type {StringParser|JSONParser|BinaryParser} */
         this.parser = parser;
     }
     
