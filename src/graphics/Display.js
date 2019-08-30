@@ -14,23 +14,17 @@ export class Display {
      * @param {number} height 
      */
     constructor(width,height){
-        /**
-         * @type {HTMLCanvasElement}
-         */
+        /** @type {HTMLCanvasElement} */
         this.canvas = document.createElement("canvas");
         this.canvas.id = "C2DC"
         this.canvas.width = width;
         this.canvas.height = height;
-        /**
-         * @type {CanvasRenderingContext2D}
-         */
+        /** @type {CanvasRenderingContext2D} */
         this.ctx = this.canvas.getContext("2d");
     }
 
    
-    /**
-     * add the canvas to the DOM and create the graphics context
-     */
+    /** add the canvas to the DOM and create the graphics context */
     create(){
         document.body.appendChild(this.canvas);
         window.canvas = this.canvas;

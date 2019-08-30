@@ -9,70 +9,45 @@
 export class Application{
 
     constructor(){
-        /**
-         * @private
-         */
+        /** Prepares any information to be loaded. */
         this.preload = null;
         
         
-        /**
-         * @private
-         */
+        /** Any code in here will be created. */
         this.create = null;
         
-        /**
-         * @private
-         */
+        /** Renders any created and loaded code from create. */
         this.render = null;
     }
 
-    /**
-     * start the application
-     * @param {Loader} loader asset loader to use in application
-     */
-    
+    /** Starts the base of your game. @param {Loader} loader loader used in application*/
     start(loader){
         loader.setCallback(this.internalCreate());
         this.preload();
     }
 
-    /**
-     * set the preload function
-     * @param {Function} preload function called before the start of the application
-     */
+    /** Changes preload into the function provided through the params. @param {Function} preload input function that you use to prepare data for loading. */
     registerPreLoad(preload){
         this.preload = preload;
     }
 
-    /**
-     * set the create function
-     * @param {Function} start function called at the start of the application
-     */
+    /** Changes create into the function provided through the params. @param {Function} start called when you do this.start(). */
     registerCreate(start){
         this.start = start;
     }
 
-    /**
-     * set the render function
-     * @param {Function} render function called as the game loop
-     */
+    /** Changes render into the function provided through the params. @param {Function} render anything generated to the screen in an infinite loop. */
     registerRender(render){
         this.render = render;
     }
 
-    /**
-     * application's internal create function
-     * @private
-     */
+    /** Runs the create program built into the engine. */
     internalCreate(){
         this.create();
         requestAnimationFrame(internalRender);
     }
 
-    /**
-     * application's internal render function
-     * @private
-     */
+    /** Runs the built in render function that is created. */
     internalRender(){
         this.render();
         requestAnimationFrame(this.render);

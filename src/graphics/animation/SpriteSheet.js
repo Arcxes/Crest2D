@@ -14,17 +14,11 @@ export class SpriteSheet{
      * @param {number} rows rows in the spritesheet image
      */
     constructor(image,cols,rows){
-        /**
-         * @type {HTMLImageElement}
-         */
+        /** @type {HTMLImageElement} */
         this.image = image;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.cols = cols;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.rows = rows;
     }
 }

@@ -14,62 +14,30 @@ export class TiledMap{
      * @param {Object} data 
      */
     constructor(url,data){
-        /**
-         * @private
-         * @type {string}
-         */
+        /** @type {string} */
         this.url = url;
-        /**
-         * @type {Object}
-         */
+        /** @type {Object} */
         this.data = data;
-        /**
-         * @private
-         * @type {HTMLImageElement[]}
-         */
+        /** @type {HTMLImageElement[]} */
         this.tilesets = [];
-        /**
-         * @private
-         * @type {HTMLImageElement[]}
-         */
+        /** @type {HTMLImageElement[]} */
         this.tiles = [];
         this.tiles.push(null);
-        /**
-         * @type {HTMLImageElement}
-         */
+        /** @type {HTMLImageElement} */
         this.image = null;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.x = 0;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.y = 0;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.totalTiles = 0;
-        /**
-         * @private
-         * @type {string}
-         */
+        /** @type {string} */
         this.folder = this.url.substring(0,this.url.lastIndexOf("/"));
-        /**
-         * @private
-         * @type {Function}
-         */
+        /** @type {Function} */
         this.success = null;
-        /**
-         * @private
-         * @type {Function}
-         */
+        /** @type {Function} */
         this.error = null;
-        /**
-         * @private
-         * @type {CanvasRenderingContext2D}
-         */
+        /** @type {CanvasRenderingContext2D} */
         this.ctx = window.ctx;
     }
 
@@ -85,7 +53,6 @@ export class TiledMap{
     }
 
     /**
-     * @private
      * load the tilesets
      */
     loadTilesets(){
@@ -113,10 +80,7 @@ export class TiledMap{
         }
     }
 
-    /**
-     * @private
-     * split the tilesets into seperate tiles
-     */
+    /** split the tilesets into seperate tiles */
     seperateTiles(){
         let self = this;
         for(let ts=0; ts<this.tilesets.length; ts++){
@@ -146,10 +110,7 @@ export class TiledMap{
         }
     }
 
-    /**
-     * @private
-     * predraw the map and save it as an image
-     */
+    /** predraw the map and save it as an image */
     predraw(){
         let mapCanvas = document.createElement("canvas");
         mapCanvas.width = this.data.width * this.data.tilewidth;
@@ -186,9 +147,7 @@ export class TiledMap{
         this.image.src = mapCanvas.toDataURL("image/png");
     }
 
-    /**
-     * render the tiled map
-     */
+    /** render the tiled map */
     render(){
         this.ctx.drawImage(this.image,this.x,this.y);
     }

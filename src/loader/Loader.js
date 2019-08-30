@@ -13,45 +13,21 @@ import {JSONLoader} from "./JSONLoader";
 export class Loader{
 
     constructor(){
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.successCount = 0;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.errorCount = 0;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.totalAssets = 0;
-        /**
-         * @private
-         * @type {Object}
-         */
+        /** @type {Object} */
         this.cache = {};
-        /**
-         * @private
-         * @type {string[]}
-         */
+        /** @type {string[]} */
         this.queue = [];
-        /**
-         * @private
-         * @type {Function}
-         */
+        /** @type {Function} */
         this.callback = null;
-        /**
-         * @private
-         * @type {ImageLoader}
-         */
+        /** @type {ImageLoader} */
         this.imageLoader = new ImageLoader();
-        /**
-         * @private
-         * @type {JSONLoader}
-         */
+        /** @type {JSONLoader} */
         this.jsonLoader = new JSONLoader(); 
     }
 

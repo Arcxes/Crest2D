@@ -14,17 +14,11 @@ export class Circle{
      * @param {number} radius
      */
     constructor(x,y,radius){
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.x = x;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.y = y;
-        /**
-         * @type {number}
-         */
+        /** @type {number} */
         this.radius = radius;
     }
 

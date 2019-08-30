@@ -15,51 +15,24 @@ export class Animation{
      * @param {number} frameHeight 
      */
     constructor(spritesheet,frameWidth,frameHeight){
-        /**
-         * @private
-         * @type {HTMLImageElement}
-         */
+        /** @type {HTMLImageElement} */
         this.image = spritesheet.image;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.cols = spritesheet.cols;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.rows = spritesheet.rows;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.frameWidth = frameWidth || this.image.width/this.cols;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.frameHeight = frameHeight || this.image.height/this.rows;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.colIndex = 0;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.rowIndex = 0;
-        /**
-         * @private
-         * @type {CanvasRenderingContext2D}
-         */
+        /** @type {CanvasRenderingContext2D} */
         this.ctx = window.ctx;
 
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
 

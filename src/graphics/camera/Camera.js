@@ -18,40 +18,19 @@ export class Camera{
      * @param {number} [y=0]
      */
     constructor(x=0,y=0){
-        /**
-         * @private
-         * @type {{x: number, y: number}}
-         */
+        /** @type {{x: number, y: number}} */
         this.position = {x: x, y: y};
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.distance = 1000;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.fov = Math.PI / 4;
-        /**
-         * @private
-         * @type {Viewport}
-         */
+        /** @type {Viewport} */
         this.viewport = new Viewport();
-        /**
-         * @private
-         * @type {HTMLCanvasElement}
-         */
+        /** @type {HTMLCanvasElement} */
         this.canvas = window.canvas;
-        /**
-         * @private
-         * @type {CanvasRenderingContext2D}
-         */
+        /** @type {CanvasRenderingContext2D} */
         this.ctx = window.ctx;
-        /**
-         * @private
-         * @type {number}
-         */
+        /** @type {number} */
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.update();
     }
