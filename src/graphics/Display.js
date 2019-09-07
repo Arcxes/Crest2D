@@ -22,22 +22,21 @@ export class Display {
         this.canvas.width = width;
         /** height of the canvas */
         this.canvas.height = height;
-        /** the rendering context */
-        this.ctx = this.canvas.getContext("2d");
     }
 
     /** add the canvas to the DOM and create the graphics context */
     create() {
         document.body.appendChild(this.canvas);
         window.canvas = this.canvas;
-        window.ctx = this.ctx
+        /** the rendering context */
+        window.ctx = this.canvas.getContext("2d");
     }
 
     /**
      * clear the canvas
      */
     clear() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     /**

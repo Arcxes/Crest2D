@@ -29,9 +29,6 @@ export class Animation {
         this.colIndex = 0;
         /** Index of rows */
         this.rowIndex = 0;
-        /** the rendering context*/
-        this.ctx = window.ctx;
-
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
 
@@ -52,7 +49,7 @@ export class Animation {
      * @param {number} height the height to render at
      */
     draw(x, y, width, height) {
-        this.ctx.drawImage(this.image,
+        ctx.drawImage(this.image,
             this.resetModX * this.frameWidth,
             this.rowIndex * this.frameHeight,
             this.frameWidth, this.frameHeight,

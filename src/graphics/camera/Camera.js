@@ -28,9 +28,6 @@ export class Camera {
         this.viewport = new Viewport();
         /** canvas to draw onto */
         this.canvas = window.canvas;
-        /** context of the canvas */
-        /** the rendering context */
-        this.ctx = window.ctx;
         /** the aspect ratio of the camera */
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.update();
@@ -38,24 +35,24 @@ export class Camera {
 
     /** start camera calculations */
     begin() {
-        this.ctx.save();
+        ctx.save();
         this.applyScale();
         this.applyTranslation();
     }
 
     /** stop the camera calculations */
     end() {
-        this.ctx.restore();
+        ctx.restore();
     }
 
     /** apply the scale to the drawing context */
     applyScale() {
-        this.ctx.scale(this.viewport.scale.x, this.viewport.scale.y);
+        ctx.scale(this.viewport.scale.x, this.viewport.scale.y);
     }
 
     /** apply the translation to the drawing context */
     applyTranslation() {
-        this.ctx.translate(-this.viewport.left, -this.viewport.top);
+        ctx.translate(-this.viewport.left, -this.viewport.top);
     }
 
     /** update the camera viewport */

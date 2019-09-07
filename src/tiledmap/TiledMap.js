@@ -38,8 +38,6 @@ export class TiledMap {
         this.success = null;
         /** error callback */
         this.error = null;
-        /** the rendering context */
-        this.ctx = window.ctx;
     }
 
     /**
@@ -150,7 +148,7 @@ export class TiledMap {
 
     /** render the tiled map */
     render() {
-        this.ctx.drawImage(this.image, this.x, this.y);
+        ctx.drawImage(this.image, this.x, this.y);
     }
 
     /**

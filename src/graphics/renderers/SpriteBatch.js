@@ -7,19 +7,13 @@
 
 //SpriteBatch Class
 export class SpriteBatch {
-
-    constructor() {
-        /** the rendering context */
-        this.ctx = window.ctx;
-    }
-
     /**
      * disable the pixel blending
      */
     disablePixelBlending() {
-        this.ctx.mozImageSmoothingEnabled = false;
-        this.ctx.msImageSmoothingEnabled = false;
-        this.ctx.imageSmoothingEnabled = false;
+        ctx.mozImageSmoothingEnabled = false;
+        ctx.msImageSmoothingEnabled = false;
+        ctx.imageSmoothingEnabled = false;
     }
 
     /**
@@ -27,7 +21,7 @@ export class SpriteBatch {
      * @param {string} color the css color code to render with
      */
     setColor(color) {
-        this.ctx.fillStyle = color;
+        ctx.fillStyle = color;
     }
 
     /**
@@ -35,7 +29,7 @@ export class SpriteBatch {
      * @param {number} alpha transparency level
      */
     setAlpha(alpha) {
-        this.ctx.globalAlpha = alpha;
+        ctx.globalAlpha = alpha;
     }
 
     /**
@@ -43,7 +37,7 @@ export class SpriteBatch {
      * @param {string} font the css font to render with
      */
     setFont(font) {
-        this.ctx.font = font;
+        ctx.font = font;
     }
 
     /**
@@ -51,7 +45,7 @@ export class SpriteBatch {
      * @param {number} width the line width for drawStroke
      */
     setLineWidth(width) {
-        this.ctx.lineWidth = width;
+        ctx.lineWidth = width;
     }
 
     /**
@@ -63,7 +57,7 @@ export class SpriteBatch {
      * @param {number} height height to render at
      */
     drawImage(image, x, y, width, height) {
-        this.ctx.drawImage(image, x, y, width, height);
+        ctx.drawImage(image, x, y, width, height);
     }
 
     /**
@@ -73,7 +67,7 @@ export class SpriteBatch {
      * @param {number} y y coordinate to render at
      */
     drawText(text, x, y) {
-        this.ctx.fillText(text, x, y);
+        ctx.fillText(text, x, y);
     }
 
     /**
@@ -84,7 +78,7 @@ export class SpriteBatch {
      * @param {number} height height to render at
      */
     drawRect(x, y, width, height) {
-        this.ctx.fillRect(x, y, width, height);
+        ctx.fillRect(x, y, width, height);
     }
 
     /**
@@ -94,9 +88,9 @@ export class SpriteBatch {
      * @param {number} radius radius to render at
      */
     drawCircle(x, y, radius) {
-        this.ctx.beginPath();
-        this.ctx.arc(x, y, radius, 2 * Math.PI, false);
-        this.ctx.fill();
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 2 * Math.PI, false);
+        ctx.fill();
     }
 
     /**
@@ -107,6 +101,6 @@ export class SpriteBatch {
      * @param {number} height height to render at
      */
     drawStroke(x, y, width, height) {
-        this.ctx.strokeRect(x, y, width, height);
+        ctx.strokeRect(x, y, width, height);
     }
 }
