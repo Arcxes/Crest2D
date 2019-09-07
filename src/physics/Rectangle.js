@@ -15,11 +15,17 @@ export class Rectangle{
      * @param {number} height 
      */
     constructor(x,y,width,height){
+        /** x location of the rectangle */
         this.x = x;
+        /** y location of the rectangle */
         this.y = y;
+        /** width of the rectangle */
         this.width = width;
+        /** height of the rectangle */
         this.height = height;
+        /** right side of the rectangle */
         this.right = this.x + this.width;
+        /** bottom side of the rectangle */
         this.bottom = this.y + this.height;
     }
 
