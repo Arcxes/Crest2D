@@ -29,6 +29,7 @@ export class Camera{
         /** canvas to draw onto */
         this.canvas = window.canvas;
         /** context of the canvas */
+        /** the rendering context */
         this.ctx = window.ctx;
         /** the aspect ratio of the camera */
         this.aspectRatio = this.canvas.width / this.canvas.height;

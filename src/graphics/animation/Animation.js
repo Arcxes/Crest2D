@@ -29,7 +29,7 @@ export class Animation{
         this.colIndex =  0;
         /** Index of rows */
         this.rowIndex =  0;
-        /** Part of HTML5 and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. */
+        /** the rendering context*/
         this.ctx =  window.ctx;
 
         this.resetModX = Math.floor(this.colIndex % this.cols);

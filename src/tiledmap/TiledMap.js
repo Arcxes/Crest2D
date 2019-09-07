@@ -26,6 +26,7 @@ export class TiledMap{
         this.folder = this.url.substring(0,this.url.lastIndexOf("/"));
         this.success = null;
         this.error = null;
+        /** the rendering context */
         this.ctx = window.ctx;
     }
 

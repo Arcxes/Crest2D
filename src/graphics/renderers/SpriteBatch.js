@@ -9,6 +9,7 @@
 export class SpriteBatch{
 
     constructor(){
+        /** the rendering context */
         this.ctx = window.ctx;
     }
 
