@@ -6,13 +6,13 @@
 */
 
 //imports
-import {ImageLoader} from "./ImageLoader";
-import {JSONLoader} from "./JSONLoader";
+import { ImageLoader } from "./ImageLoader";
+import { JSONLoader } from "./JSONLoader";
 
 //Loader Class
-export class Loader{
+export class Loader {
 
-    constructor(){
+    constructor() {
         /** amount of completed file loads */
         this.successCount = 0;
         /** amount of failed file loads */
@@ -23,19 +23,19 @@ export class Loader{
         this.cache = {};
         /** assets waiting to be loaded */
         this.queue = [];
-        /** function to load completed callback */
+        /** function to load completed callbackS */
         this.callback = null;
         /** the image loader */
         this.imageLoader = new ImageLoader();
         /** the json loader */
-        this.jsonLoader = new JSONLoader(); 
+        this.jsonLoader = new JSONLoader();
     }
 
     /**
      * set the Loader callback
      * @param {Function} callback 
      */
-    setCallback(callback){
+    setCallback(callback) {
         this.callback = callback;
     }
 
@@ -43,7 +43,7 @@ export class Loader{
      * add an asset to be loaded
      * @param {string} url url to be queued
      */
-    add(url){
+    add(url) {
         this.totalAssets++;
         this.queue.push(url);
     }
@@ -52,27 +52,27 @@ export class Loader{
      * load an asset
      * @param {string} url url to be loaded
      */
-    load(url){
+    load(url) {
         this.totalAssets++;
         let type = url.split(".");
-        this.loadIntoMemory(url,type[1]);
+        this.loadIntoMemory(url, type[1]);
     }
-    
+
     /**
      * load all the queued assets
      * @param {Function} callback function to be called when assets are done loading
      */
-    loadAssets(callback){
-        if(callback != undefined){
+    loadAssets(callback) {
+        if (callback != undefined) {
             this.setCallback(callback);
         }
-        if(this.isDone()){
+        if (this.isDone()) {
             this.callback();
         }
-        for(let i in this.queue){
+        for (let i in this.queue) {
             let url = this.queue[i];
             let type = url.split(".");
-            this.loadIntoMemory(url,type[1]);
+            this.loadIntoMemory(url, type[1]);
         }
     }
 
@@ -81,7 +81,7 @@ export class Loader{
      * @param {string} url url of asset to retrieve
      * @return {*} asset that was retrieved
      */
-    get(url){
+    get(url) {
         return this.cache[url];
     }
 
@@ -90,14 +90,14 @@ export class Loader{
      * @param {string} url url to asset to load
      * @param {string} type type of asset to load
      */
-    loadIntoMemory(url,type){
-        if(type == "png" || type == "jpg" || type == "jpeg"){
-            this.imageLoader.load(url,this);
-        }else if(type == "mp3" || type == "wav" || type == "ogg"){
-            this.audioLoader.load(url,this);
-        }else if(type == "json"){
-            this.jsonLoader.load(url,this);
-        }else{
+    loadIntoMemory(url, type) {
+        if (type == "png" || type == "jpg" || type == "jpeg") {
+            this.imageLoader.load(url, this);
+        } else if (type == "mp3" || type == "wav" || type == "ogg") {
+            this.audioLoader.load(url, this);
+        } else if (type == "json") {
+            this.jsonLoader.load(url, this);
+        } else {
             console.error(`Failed to load asset: { url: ${url}}`);
         }
     }
@@ -106,8 +106,8 @@ export class Loader{
      * check if all the assets are done loading
      * @return {boolean} is the assets done loading
      */
-    isDone(){
-        if(this.totalAssets == this.successCount + this.errorCount){
+    isDone() {
+        if (this.totalAssets == this.successCount + this.errorCount) {
             this.totalAssets = 0;
             this.queue = [];
             return true;

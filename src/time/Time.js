@@ -9,8 +9,11 @@
 export class DeltaTime {
 
     constructor(){
+        /** current time */
         this.now = 0;
+        /** delta time */
         this.delta = 0;
+        /** last time */
         this.then = 0;
     }
 

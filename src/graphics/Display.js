@@ -13,7 +13,7 @@ export class Display {
      * @param {number} width 
      * @param {number} height 
      */
-    constructor(width,height){
+    constructor(width, height) {
         /** canvas to draw onto */
         this.canvas = document.createElement("canvas");
         /** id of the canvas */
@@ -25,9 +25,9 @@ export class Display {
         /** the rendering context */
         this.ctx = this.canvas.getContext("2d");
     }
-   
+
     /** add the canvas to the DOM and create the graphics context */
-    create(){
+    create() {
         document.body.appendChild(this.canvas);
         window.canvas = this.canvas;
         window.ctx = this.ctx
@@ -36,8 +36,8 @@ export class Display {
     /**
      * clear the canvas
      */
-    clear(){
-        this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    clear() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     /**
@@ -45,7 +45,7 @@ export class Display {
      * @param {number} width 
      * @param {number} height 
      */
-    resize(width,height){
+    resize(width, height) {
         this.canvas.width = width;
         this.canvas.height = height;
     }

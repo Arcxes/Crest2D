@@ -6,7 +6,7 @@
 */
 
 //Rectangle Class
-export class Rectangle{
+export class Rectangle {
 
     /**
      * @param {number} x 
@@ -14,7 +14,7 @@ export class Rectangle{
      * @param {number} width 
      * @param {number} height 
      */
-    constructor(x,y,width,height){
+    constructor(x, y, width, height) {
         /** x location of the rectangle */
         this.x = x;
         /** y location of the rectangle */
@@ -34,7 +34,7 @@ export class Rectangle{
      * @param {Rectangle} rectangle rectangle to compare with
      * @return {boolean} are the rectangles overlapping
      */
-    overlaps(rectangle){
+    overlaps(rectangle) {
         return (this.x < rectangle.x + rectangle.width &&
             this.x + this.width > rectangle.x &&
             this.y < rectangle.y + rectangle.height &&
@@ -46,7 +46,7 @@ export class Rectangle{
      * @param {Rectangle} rectangle rectangle to compare with
      * @return {boolean} is the rectangle inside the other rectangle
      */
-    within(rectangle){
+    within(rectangle) {
         return (rectangle.x <= this.x &&
             rectangle.right >= this.right &&
             rectangle.y <= this.y &&
@@ -59,7 +59,7 @@ export class Rectangle{
      * @param {number} y y coordinate
      * @return {boolean} does the rectangle contain the coordinates
      */
-    contains(x,y){
+    contains(x, y) {
         return (x >= this.x &&
             x <= this.right &&
             y >= this.y &&
@@ -71,7 +71,7 @@ export class Rectangle{
      * @param {number} x x coordinate
      * @param {number} y y coordinate
      */
-    setPosition(x,y){
+    setPosition(x, y) {
         this.x = x;
         this.y = y;
     }
@@ -81,7 +81,7 @@ export class Rectangle{
      * @param {number} width new rectangle width
      * @param {number} height new rectangle height
      */
-    setSize(width,height){
+    setSize(width, height) {
         this.width = width;
         this.height = height;
     }

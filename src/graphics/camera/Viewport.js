@@ -6,9 +6,9 @@
 */
 
 //Viewport Class
-export class Viewport{
+export class Viewport {
 
-    constructor(){
+    constructor() {
         /** left side of the view */
         this.left = 0;
         /** right side of the view */
@@ -22,7 +22,7 @@ export class Viewport{
         /** height of the view */
         this.height = 0;
         /** zoom of the view */
-        this.scale = {x: 0, y: 0};
+        this.scale = { x: 0, y: 0 };
         /** frustrum of the view */
         this.viewBuffer = 100;
     }
