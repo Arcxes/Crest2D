@@ -14,13 +14,17 @@ export class Display {
      * @param {number} height 
      */
     constructor(width,height){
+        /** canvas to draw onto */
         this.canvas = document.createElement("canvas");
+        /** id of the canvas */
         this.canvas.id = "C2DC"
+        /** width of the canvas */
         this.canvas.width = width;
+        /** height of the canvas */
         this.canvas.height = height;
+        /** the rendering context */
         this.ctx = this.canvas.getContext("2d");
     }
-
    
     /** add the canvas to the DOM and create the graphics context */
     create(){
