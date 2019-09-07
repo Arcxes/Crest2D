@@ -15,18 +15,26 @@ export class Animation{
      * @param {number} frameHeight 
      */
     constructor(spritesheet,frameWidth,frameHeight){
-        this.image = spritesheet.image;
-        this.cols = spritesheet.cols;
-        this.rows = spritesheet.rows;
-        this.frameWidth = frameWidth || this.image.width/this.cols;
-        this.frameHeight = frameHeight || this.image.height/this.rows;
-        this.colIndex = 0;
-        this.rowIndex = 0;
-        this.ctx = window.ctx;
+        /** Spritesheet Image */
+        this.image =  spritesheet.image;
+        /** Amount of columns in the spritesheet */
+        this.cols =  spritesheet.cols;
+        /** Amount of rows in the spritesheet */
+        this.rows =  spritesheet.rows;
+        /** width of the animation frame */
+        this.frameWidth =  frameWidth || this.image.width/this.cols;
+        /** height of the animation frame */
+        this.frameHeight =  frameHeight || this.image.height/this.rows;
+        /** Index of columns */
+        this.colIndex =  0;
+        /** Index of rows */
+        this.rowIndex =  0;
+        /** Part of HTML5 and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. */
+        this.ctx =  window.ctx;
 
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
-
+    
     /**
      * updates the current frame
      * @param {number} speed the animation playback speed
