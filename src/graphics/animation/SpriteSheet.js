@@ -14,8 +14,11 @@ export class SpriteSheet{
      * @param {number} rows rows in the spritesheet image
      */
     constructor(image,cols,rows){
-        this.image = image;
-        this.cols = cols;
-        this.rows = rows;
+        /** Spritesheet Image */
+        this.image =  spritesheet.image;
+        /** Amount of columns in the spritesheet */
+        this.cols =  spritesheet.cols;
+        /** Amount of rows in the spritesheet */
+        this.rows =  spritesheet.rows;
     }
 }

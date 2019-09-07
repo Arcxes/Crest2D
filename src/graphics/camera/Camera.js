@@ -18,12 +18,19 @@ export class Camera{
      * @param {number} [y=0]
      */
     constructor(x=0,y=0){
+        /** position of Camera */
         this.position = {x: x, y: y};
+        /** distance/Zoom of camera */
         this.distance = 1000;
+        /** the field of view for the camera */
         this.fov = Math.PI / 4;
+        /** the camera viewport */
         this.viewport = new Viewport();
+        /** canvas to draw onto */
         this.canvas = window.canvas;
+        /** context of the canvas */
         this.ctx = window.ctx;
+        /** the aspect ratio of the camera */
         this.aspectRatio = this.canvas.width / this.canvas.height;
         this.update();
     }
