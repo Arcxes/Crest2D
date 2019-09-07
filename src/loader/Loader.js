@@ -13,13 +13,21 @@ import {JSONLoader} from "./JSONLoader";
 export class Loader{
 
     constructor(){
+        /** amount of completed file loads */
         this.successCount = 0;
+        /** amount of failed file loads */
         this.errorCount = 0;
+        /** total amount of collected assets */
         this.totalAssets = 0;
+        /** downloaded assets into the server */
         this.cache = {};
+        /** assets waiting to be loaded */
         this.queue = [];
+        /** function to load completed callback */
         this.callback = null;
+        /** the image loader */
         this.imageLoader = new ImageLoader();
+        /** the json loader */
         this.jsonLoader = new JSONLoader(); 
     }
 
