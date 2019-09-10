@@ -27,4 +27,4 @@ export { Client } from "./network/Client";
 export { StringParser } from "./network/parsers/StringParser";
 export { JSONParser } from "./network/parsers/JSONParser";
 export { BinaryParser } from "./network/parsers/BinaryParser";
-export { Sound } from "./audio/soundSystem";
+export { Music } from "./audio/music";

@@ -5,7 +5,7 @@
   "main": "build/crest2d.js",
   "scripts": {
     "build": "outwalk compile",
-    "gen-docs": "jsdoc -r src README.md -d docs"
+    "gen-docs": "outwalk docs --dir src --recurse"
   },
   "repository": {
     "type": "git",
