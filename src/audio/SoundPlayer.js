@@ -1,4 +1,8 @@
-export class Music {
+export class SoundPlayer {
+    constructor(){
+        this.volume = 50;
+    }
+
     static enableAudioAccess(element) {
         try {
             window.audioContext = window.audioContext || new AudioContext();
@@ -20,14 +24,19 @@ export class Music {
 
     }
 
-    play(sound) {
-        source = audioContext.createBufferSource();
+    static play(sound) {
+        let source = audioContext.createBufferSource();
+        let gainNode = audioContext.createGain();
+        gainNode.gain.value = sound.volume;
         source.buffer = sound.audioBuffer;
-        source.connect(audioContext.destination);
+        source.connect(gainNode);
+        gainNode.connect(audioContext.destination);
         source.start();
+
+        sound.source = source;
     }
 
-    stop(sound) {
-        sound.stop();
+    static stop(sound) {
+        sound.source.stop();
     }
 }

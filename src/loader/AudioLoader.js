@@ -16,15 +16,21 @@ export class AudioLoader{
         /* window.fetch goes here */
 
         window.fetch(url)
-        .then(response => response.arrayBuffer())
-        .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+        .then(response => {
+            return response.arrayBuffer()
+        })
+        .then(arrayBuffer => {
+            return audioContext.decodeAudioData(arrayBuffer)
+        })
         .then(audioBuffer => {
-            loader.successCount++;
+            loader.successCount += 1;
             loader.cache[url] = new Sound(audioBuffer);
             if (loader.isDone()) {
                 loader.callback();
             }
-        }).catch(() => {
+            
+        }).catch((err) => {
+            if (err) throw err;
             loader.errorCount++;
             console.error(`Failed to load music asset: { url: ${url}}`);
             if (loader.isDone()) {
