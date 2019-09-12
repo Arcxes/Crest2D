@@ -1,8 +1,17 @@
+//Sound.js
+//Author - Daniel Wedding
+
+/*
+   Sound is used to store and use a sound object
+*/
+
 export class Sound {
-    constructor(audioBuffer){
+    constructor(audioBuffer) {
+        /* audio buffer of the sound */
         this.audioBuffer = audioBuffer;
+        /* media source of the sound */
         this.src = "/sound.mp3";
-        this.volume = 1;
+        /* buffer source of the sound */
         this.source;
     }
 }
