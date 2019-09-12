@@ -6,13 +6,13 @@
 */
 
 //JSONParser Class
-export class JSONParser{
+export class JSONParser {
 
     /**
      * set the data type for the socket
      * @param {WebSocket} socket websocket to be registed
      */
-    register(socket){
+    register(socket) {
         console.log(`WebSocket: ${socket} has been registered with JSONParser`);
     }
 
@@ -21,7 +21,7 @@ export class JSONParser{
      * @param {Object} data data to be encoded
      * @return {string} encoded data
      */
-    encode(data){
+    encode(data) {
         let string = JSON.stringify(data);
         return string;
     }
@@ -31,7 +31,7 @@ export class JSONParser{
      * @param {*} data data to be decoded
      * @return {Object} decoded data
      */
-    decode(data){
+    decode(data) {
         let json = JSON.parse(data);
         return json;
     }

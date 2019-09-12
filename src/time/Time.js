@@ -9,23 +9,15 @@
 export class DeltaTime {
 
     constructor(){
-        /**
-         * @type {number}
-         */
+        /** current time */
         this.now = 0;
-        /**
-         * @type {number}
-         */
+        /** delta time */
         this.delta = 0;
-        /**
-         * @type {number}
-         */
+        /** last time */
         this.then = 0;
     }
 
-    /**
-     * update the delta time value
-     */
+    /** update the delta time value */
     tick(){
         this.now = performance.now();
         this.delta = (this.now - this.then)/1000;

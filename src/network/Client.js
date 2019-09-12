@@ -6,30 +6,24 @@
 */
 
 //Client Class
-export class Client{
+export class Client {
 
     /**
      * 
      * @param {StringParser|JSONParser|BinaryParser} parser parser to use
      */
-    constructor(parser){
-        /**
-         * @ignore
-         * @type {WebSocket}
-         */
+    constructor(parser) {
+        /** the client websocket */
         this.socket = null;
-        /**
-         * @ignore
-         * @type {StringParser|JSONParser|BinaryParser}
-         */
+        /** the client parser */
         this.parser = parser;
     }
-    
+
     /**
      * connect to a web socket server
      * @param {string} url the url of the server
      */
-    connect(url){
+    connect(url) {
         this.socket = new WebSocket(url);
         this.parser.register(this.socket);
     }
@@ -38,7 +32,7 @@ export class Client{
      * send data to the server
      * @param {*} data data to send to the server
      */
-    send(data){
+    send(data) {
         this.socket.send(this.parser.encode(data));
     }
 
@@ -47,7 +41,7 @@ export class Client{
      * @param {*} data 
      * @return {*} data parsed into chosen parser format
      */
-    parse(data){
+    parse(data) {
         return this.parser.decode(data);
     }
 
@@ -55,7 +49,7 @@ export class Client{
      * set the onopen function of the websocket
      * @param {Function} callback onopen callback
      */
-    set onopen(callback){
+    set onopen(callback) {
         this.socket.onopen = callback;
     }
 
@@ -63,7 +57,7 @@ export class Client{
      * set the onmessage function of the websocket
      * @param {Function} callback onmessage callback
      */
-    set onmessage(callback){
+    set onmessage(callback) {
         this.socket.onmessage = callback;
     }
 
@@ -71,7 +65,7 @@ export class Client{
      * set the onerror function of the websocket
      * @param {Function} callback onerror callback
      */
-    set onerror(callback){
+    set onerror(callback) {
         this.socket.onerror = callback;
     }
 
@@ -79,7 +73,7 @@ export class Client{
      * set the onclose function of the websocket
      * @param {Function} callback onclose callback
      */
-    set onclose(callback){
+    set onclose(callback) {
         this.socket.onclose = callback;
     }
 }

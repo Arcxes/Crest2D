@@ -6,25 +6,19 @@
 */
 
 //Circle Class
-export class Circle{
+export class Circle {
 
     /**
      * @param {number} x
      * @param {number} y
      * @param {number} radius
      */
-    constructor(x,y,radius){
-        /**
-         * @type {number}
-         */
+    constructor(x, y, radius) {
+        /** x location of the circle */
         this.x = x;
-        /**
-         * @type {number}
-         */
+        /** y location of the circle */
         this.y = y;
-        /**
-         * @type {number}
-         */
+        /** radius of the circle */
         this.radius = radius;
     }
 
@@ -33,9 +27,9 @@ export class Circle{
      * @param {Circle} circle circle to compare with
      * @return {boolean} are the circles overlapping
      */
-    overlaps(circle){
-        var distance = Math.sqrt((this.x-circle.x) * ((this.x-circle.x) +
-         (this.y-circle.y)) * (this.y-circle.y));
+    overlaps(circle) {
+        var distance = Math.sqrt((this.x - circle.x) * ((this.x - circle.x) +
+            (this.y - circle.y)) * (this.y - circle.y));
         return (distance < this.radius + circle.radius);
     }
 }

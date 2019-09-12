@@ -6,13 +6,10 @@
 */
 
 //BinaryParser Class
-export class BinaryParser{
+export class BinaryParser {
 
-    constructor(){
-        /**
-         * @ignore
-         * @type {number}
-         */
+    constructor() {
+        /** byte multiplier */
         this.byteMultiplier = 2;
     }
 
@@ -20,7 +17,7 @@ export class BinaryParser{
      * set the data type for the socket
      * @param {WebSocket} socket websocket to be registed
      */
-    register(socket){
+    register(socket) {
         socket.binaryType = "arraybuffer";
         console.log(`WebSocket: ${socket} has been registered with BinaryParser`);
     }
@@ -30,12 +27,12 @@ export class BinaryParser{
      * @param {Object} data data to be encoded
      * @return {ArrayBuffer} buffer containing binary data
      */
-    encode(data){
+    encode(data) {
         let string = JSON.stringify(data);
         let buffer = new ArrayBuffer(string.length * this.byteMultiplier);
         let bufferView = new Uint16Array(buffer);
         let length = string.length;
-        for(let i=0; i<length; i++){
+        for (let i = 0; i < length; i++) {
             bufferView[i] = string.charCodeAt(i);
         }
         return buffer;
@@ -46,7 +43,7 @@ export class BinaryParser{
      * @param {*} data data to be decoded
      * @return {Object} json form of the data
      */
-    decode(data){
+    decode(data) {
         let string = String.fromCharCode.apply(null, new Uint16Array(data));
         let json = JSON.parse(string);
         return json;

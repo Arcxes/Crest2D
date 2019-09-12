@@ -6,13 +6,13 @@
 */
 
 //StringParser Class
-export class StringParser{
+export class StringParser {
 
     /**
      * set the data type for the socket
      * @param {WebSocket} socket websocket to be registed
      */
-    register(socket){
+    register(socket) {
         console.log(`WebSocket: ${socket} has been registered with StringParser`);
     }
 
@@ -21,7 +21,7 @@ export class StringParser{
      * @param {string} data data to be encoded
      * @return {string} encoded data
      */
-    encode(data){
+    encode(data) {
         return data;
     }
 
@@ -30,7 +30,7 @@ export class StringParser{
      * @param {string} data data to be decoded
      * @return {string} decoded data
      */
-    decode(data){
+    decode(data) {
         return data;
     }
 }

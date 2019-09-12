@@ -13,35 +13,30 @@ export class Display {
      * @param {number} width 
      * @param {number} height 
      */
-    constructor(width,height){
-        /**
-         * @type {HTMLCanvasElement}
-         */
+    constructor(width, height) {
+        /** canvas to draw onto */
         this.canvas = document.createElement("canvas");
+        /** id of the canvas */
         this.canvas.id = "C2DC"
+        /** width of the canvas */
         this.canvas.width = width;
+        /** height of the canvas */
         this.canvas.height = height;
-        /**
-         * @type {CanvasRenderingContext2D}
-         */
-        this.ctx = this.canvas.getContext("2d");
     }
 
-   
-    /**
-     * add the canvas to the DOM and create the graphics context
-     */
-    create(){
+    /** add the canvas to the DOM and create the graphics context */
+    create() {
         document.body.appendChild(this.canvas);
         window.canvas = this.canvas;
-        window.ctx = this.ctx
+        /** the rendering context */
+        window.ctx = this.canvas.getContext("2d");
     }
 
     /**
      * clear the canvas
      */
-    clear(){
-        this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    clear() {
+        ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     /**
@@ -49,7 +44,7 @@ export class Display {
      * @param {number} width 
      * @param {number} height 
      */
-    resize(width,height){
+    resize(width, height) {
         this.canvas.width = width;
         this.canvas.height = height;
     }

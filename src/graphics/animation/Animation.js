@@ -6,7 +6,7 @@
 */
 
 //Animation Class
-export class Animation{
+export class Animation {
 
     /**
      * 
@@ -14,52 +14,21 @@ export class Animation{
      * @param {number} frameWidth 
      * @param {number} frameHeight 
      */
-    constructor(spritesheet,frameWidth,frameHeight){
-        /**
-         * @ignore
-         * @type {HTMLImageElement}
-         */
+    constructor(spritesheet, frameWidth, frameHeight) {
+        /** Spritesheet Image */
         this.image = spritesheet.image;
-        /**
-         * @ignore
-         * @type {number}
-         */
+        /** Amount of columns in the spritesheet */
         this.cols = spritesheet.cols;
-        /**
-         * @ignore
-         * @type {number}
-         */
+        /** Amount of rows in the spritesheet */
         this.rows = spritesheet.rows;
-        /**
-         * @ignore
-         * @type {number}
-         */
-        this.frameWidth = frameWidth || this.image.width/this.cols;
-        /**
-         * @ignore
-         * @type {number}
-         */
-        this.frameHeight = frameHeight || this.image.height/this.rows;
-        /**
-         * @ignore
-         * @type {number}
-         */
+        /** width of the animation frame */
+        this.frameWidth = frameWidth || this.image.width / this.cols;
+        /** height of the animation frame */
+        this.frameHeight = frameHeight || this.image.height / this.rows;
+        /** Index of columns */
         this.colIndex = 0;
-        /**
-         * @ignore
-         * @type {number}
-         */
+        /** Index of rows */
         this.rowIndex = 0;
-        /**
-         * @ignore
-         * @type {CanvasRenderingContext2D}
-         */
-        this.ctx = window.ctx;
-
-        /**
-         * @ignore
-         * @type {number}
-         */
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
 
@@ -67,8 +36,8 @@ export class Animation{
      * updates the current frame
      * @param {number} speed the animation playback speed
      */
-    update(speed){
-        this.colIndex+=speed;
+    update(speed) {
+        this.colIndex += speed;
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
 
@@ -79,10 +48,10 @@ export class Animation{
      * @param {number} width the width to render at
      * @param {number} height the height to render at
      */
-    draw(x,y,width,height){
-        this.ctx.drawImage(this.image,
-            this.resetModX*this.frameWidth,
-            this.rowIndex*this.frameHeight,
+    draw(x, y, width, height) {
+        ctx.drawImage(this.image,
+            this.resetModX * this.frameWidth,
+            this.rowIndex * this.frameHeight,
             this.frameWidth, this.frameHeight,
             x, y,
             width, height
@@ -93,7 +62,7 @@ export class Animation{
      * set the row index
      * @param {number} rowIndex the row to use
      */
-    setFrameRow(rowIndex){
+    setFrameRow(rowIndex) {
         this.rowIndex = rowIndex;
     }
 
@@ -103,11 +72,11 @@ export class Animation{
      * @param {number} colIndex column of the desired frame
      * @param {number} rowIndex row of the desired frame
      */
-    setFrame(colIndex,rowIndex){
+    setFrame(colIndex, rowIndex) {
         this.colIndex = colIndex;
         this.rowIndex = rowIndex;
         this.resetModX = Math.floor(this.colIndex % this.cols);
     }
 
-    
+
 }

@@ -6,40 +6,24 @@
 */
 
 //Viewport Class
-export class Viewport{
+export class Viewport {
 
-    constructor(){
-        /**
-         * @type {number}
-         */
+    constructor() {
+        /** left side of the view */
         this.left = 0;
-        /**
-         * @type {number}
-         */
+        /** right side of the view */
         this.right = 0;
-        /**
-         * @type {number}
-         */
+        /** the top of the view */
         this.top = 0;
-        /**
-         * @type {number}
-         */
+        /** the bottom of the view */
         this.bottom = 0;
-        /**
-         * @type {number}
-         */
+        /** width of the view */
         this.width = 0;
-        /**
-         * @type {number}
-         */
+        /** height of the view */
         this.height = 0;
-        /**
-         * @type {{x: number, y: number}}
-         */
-        this.scale = {x: 0, y: 0};
-        /**
-         * @type {number}
-         */
+        /** zoom of the view */
+        this.scale = { x: 0, y: 0 };
+        /** frustrum of the view */
         this.viewBuffer = 100;
     }
 }
