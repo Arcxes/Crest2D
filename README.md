@@ -25,7 +25,7 @@ Crest2D was developed to build cross platform games with JavaScript but quickly 
 
 
 ## Support
-Create a new [issue](https://github.com/jleeson/Crest2D/issues)
+Create a new issue, or contact one of the contributors.
 
 ## License
 Crest2D is open source and you are free to do whatever you want with it without restrictions.
