@@ -4,8 +4,8 @@
   "description": "An HTML5 Game Engine designed for high performance 2D Cross Platform games",
   "main": "build/crest2d.js",
   "scripts": {
-    "build": "outwalk compile",
-    "gen-docs": "outwalk docs --dir src --recurse"
+    "build": "sable -c",
+    "docs": "jsdoc -r src  README.md -d docs"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/Arcxes/Crest2D#readme",
   "devDependencies": {
-    "jsdoc": "^3.6.3",
-    "outwalk": "^1.4.1"
+    "@outwalk/sable": "^1.2.0",
+    "jsdoc": "^3.6.3"
   }
 }
